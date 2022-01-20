@@ -1,0 +1,22 @@
+{% extends "temp/base.html" %}
+{% block content %}
+<form action="{% url 'search_jobs' %}" method=POST>
+    {% csrf_token %}
+    <input type="search" placeholder="Search..." name="searched">
+    <button type="submit">Search</button>
+</form>
+<h1>Job Details</h1>
+    {% if jobs %}
+        {% for job in jobs %}
+            <div>
+                <ul>
+                    <h3>{{ job.job_position }}</h3>
+                    <h5>{{ job.company_name }}</h5>
+                    <li>{{ job.location }}</li>
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+            <h3>No Jobs are available.</h3>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "temp/base.html" %}
+{% block content %}
+{% if searched %}
+    <h3>You have searched for</h3>
+    <br/>
+    <ul>
+    {% for state in states %}
+        <li>
+            <a href="/states/{{ state.location }}">{{ state.location }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+<h3>You have not searched anything</h3>
+{% endif %}
+{% endblock %}

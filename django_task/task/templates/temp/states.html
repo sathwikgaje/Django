@@ -1,0 +1,17 @@
+{% extends "temp/base.html" %}
+{% block content %}
+<link rel="stylesheet" href="base.css">
+<form action="{% url 'search_states' %}" method=POST>
+    {% csrf_token %}
+    <input type="search" placeholder="Search..." name="searched">
+    <button type="submit">Search</button>
+</form>
+<h1>States</h1>
+    <ul>
+    {% for state in states %}
+        <li>
+            <a href="/states/{{ state.location }}">{{ state.location }}</a>
+        </li>
+    {%endfor%}
+    </ul>
+{% endblock %}

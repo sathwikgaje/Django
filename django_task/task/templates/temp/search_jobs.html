@@ -1,0 +1,22 @@
+{% extends "temp/base.html" %}
+{% block content %}
+{% if searched %}
+    <h3>You have searched for</h3>
+    <br/>
+    {% if jobs %}
+        {% for job in jobs %}
+            <div>
+                <ul>
+                    <h3>{{ job.job_position }}</h3>
+                    <h5>{{ job.company_name }}</h5>
+                    <li>{{ job.location }}</li>
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+            <h3>No Jobs are available.</h3>
+    {% endif %}
+{% else %}
+<h3>You have not searched anything</h3>
+{% endif %}
+{% endblock %}

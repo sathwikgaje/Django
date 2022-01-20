@@ -1,0 +1,16 @@
+{% extends "temp/base.html" %}
+{% block content %}
+{% if searched %}
+    <h3>You have searched for</h3>
+    <br/>
+    <ul>
+    {% for subcategory in subcategories %}
+    <li>
+        <a href="/states/{{ pk_test }}/{{ pk_data }}/{{ subcategory.sub_category }}">{{ subcategory.sub_category }}</a>
+    </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h3>You have not searched anything</h3>
+{% endif %}
+{% endblock %}

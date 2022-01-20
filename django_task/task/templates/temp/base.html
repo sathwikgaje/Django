@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Django</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+</body>
+</html>

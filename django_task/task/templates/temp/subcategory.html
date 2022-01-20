@@ -1,0 +1,16 @@
+{% extends "temp/base.html" %}
+{% block content %}
+<form action="{% url 'search_sub_category' %}" method=POST>
+    {% csrf_token %}
+    <input type="search" placeholder="Search..." name="searched">
+    <button type="submit">Search</button>
+</form>
+<h1>Sub Categories</h1>
+<ul>
+    {% for subcategory in subcategories %}
+        <li>
+            <a href="/states/{{ pk_test }}/{{ pk_data }}/{{ subcategory.sub_category }}">{{ subcategory.sub_category }}</a>
+        </li>
+    {%endfor%}
+</ul>
+{% endblock %}
