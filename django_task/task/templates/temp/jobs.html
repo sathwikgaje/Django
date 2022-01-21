@@ -10,9 +10,13 @@
         {% for job in jobs %}
             <div>
                 <ul>
-                    <h3>{{ job.job_position }}</h3>
+                    <h3>Job:</h3>
+                    <h4>{{ job.job_position }}</h4>
+                    <h3>Company Name:</h3>
                     <h5>{{ job.company_name }}</h5>
+                    <h3>Location:</h3>
                     <li>{{ job.location }}</li>
+                    <hr>
                 </ul>
             </div>
         {% endfor %}
